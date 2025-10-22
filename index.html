@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anna Memorial Hospital</title>
+  <link rel="icon" href="E:\HospitalManagement\Front_End\Img\medical.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-left">
+      <img src="E:\HospitalManagement\Front_End\Img\medical.png" alt="Logo" class="logo">
+      <div class="brand">
+        <div class="brand-title">Anna Memorial Hospital</div>
+        <div class="brand-sub">Care • Compassion • Excellence</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="btn primary" id="btnAddPatientTop">+ Add Patient</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Welcome to Anna Memorial Hospital</h1>
+    <p>We provide compassionate, modern healthcare with skilled professionals and patient-centered services.</p>
+    <div class="hero-actions">
+      <button class="btn secondary" id="btnViewDoctorsHero">View Doctors</button>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- PATIENT SECTION -->
+    <section id="patientSection" class="card">
+      <h2>Patient Management</h2>
+
+      <!-- Add Patient -->
+      <div class="card-block">
+        <h3>Add Patient</h3>
+        <form id="formAddPatient" class="form">
+          <input id="inputPatientName" type="text" placeholder="Full name" required>
+          <input id="inputPatientAge" type="number" placeholder="Age" min="0" required>
+          <select id="inputPatientGender" required>
+            <option value="">Select gender</option>
+            <option>Male</option><option>Female</option><option>Other</option>
+          </select>
+          <button class="btn primary" type="submit">Add Patient</button>
+        </form>
+      </div>
+
+      <!-- View / Remove buttons (side-by-side desktop, stacked mobile) -->
+      <div class="card-block actions-row">
+        <div class="action-col">
+          <h4>View Patients</h4>
+          <button class="btn outline" id="btnViewPatients">Show List</button>
+          <div id="viewPatientsList" class="list"></div>
+        </div>
+
+        <div class="action-col">
+          <h4>Remove Patient</h4>
+          <button class="btn outline" id="btnRemovePatients">Show Remove</button>
+          <div id="removePatientsList" class="list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCTORS SECTION -->
+    <section id="doctors" class="section">
+  <h2>Our Doctors</h2>
+  <p>Meet our expert medical professionals</p>
+  
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Doctor Name</th>
+        <th>Specialization</th>
+      </tr>
+    </thead>
+    <tbody id="doctorList">
+      <!-- Example Data (you can replace with dynamic data later) -->
+      <tr>
+        <td>1</td>
+        <td>Dr. Asha Menon</td>
+        <td>Cardiologist</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Dr. Rajesh Kumar</td>
+        <td>Neurologist</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Dr. Meera Nair</td>
+        <td>Orthopedic</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+    <!-- APPOINTMENT SECTION -->
+    <section id="appointmentSection" class="card">
+      <h2>Appointments</h2>
+
+      <div class="card-block">
+        <h3>Book Appointment</h3>
+        <form id="formAddAppointment" class="form">
+          <input id="inputApPtId" type="number" placeholder="Patient ID" min="1" required>
+          <input id="inputApDrId" type="number" placeholder="Doctor ID" min="1" required>
+          <input id="inputApDate" type="date" required>
+          <button class="btn primary" type="submit">Book Appointment</button>
+        </form>
+      </div>
+
+      <div class="card-block actions-row">
+        <div class="action-col">
+          <h4>View Appointments</h4>
+          <button class="btn outline" id="btnViewAppointments">Show List</button>
+          <div id="viewAppointmentsList" class="list"></div>
+        </div>
+
+        <div class="action-col">
+          <h4>Remove Appointment</h4>
+          <button class="btn outline" id="btnRemoveAppointments">Show Remove</button>
+          <div id="removeAppointmentsList" class="list"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div>📍 Anna Memorial Hospital — MG Road, Kochi, Kerala</div>
+    <div>☎ +91 98765 43210 • ✉ contact@annamemorial.in</div>
+  </footer>
+
+</body>
+</html>
